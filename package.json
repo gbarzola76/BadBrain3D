@@ -7,7 +7,7 @@
   "scripts": {
     "predev": "node scripts/copiar-contenido.js",
     "prebuild": "node scripts/copiar-contenido.js",
-    "dev": "concurrently -n api,web -c yellow,cyan \"node --watch server/index.js\" \"vite\"",
+    "dev": "concurrently -n pagos,web -c yellow,cyan \"wrangler dev --port 8787\" \"vite\"",
     "build": "vite build",
     "start": "node server/index.js",
     "preview": "npm run build && npm start"
@@ -28,7 +28,8 @@
     "concurrently": "^9.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "wrangler": "^4.164.0"
   },
   "engines": {
     "node": ">=18"

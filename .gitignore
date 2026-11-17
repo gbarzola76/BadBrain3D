@@ -9,3 +9,4 @@ server/data/archivos/*
 .claude/
 # public/contenido/ se genera solo desde contenido/ (scripts/copiar-contenido.js)
 public/contenido/
+.dev.vars

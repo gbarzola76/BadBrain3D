@@ -8,7 +8,8 @@
     "precio": 9500,
     "imagen": "maceta1.jpg",
     "colores": ["Blanco", "Negro", "Terracota"],
-    "descripcion": "Diseñado para quienes aprecian las líneas nítidas, las texturas paramétricas y un sofisticado estilo diseñado por arquitectos para su hogar u oficina"
+    "descripcion": "Diseñado para quienes aprecian las líneas nítidas, las texturas paramétricas y un sofisticado estilo diseñado por arquitectos para su hogar u oficina",
+    "envio": { "largo": 10, "ancho": 10, "alto": 10, "peso": 150 }
   },
   {
     "id": "soporte-auriculares",
@@ -19,7 +20,8 @@
     "precio": 14000,
     "imagen": "soporte_auricular1.jpg",
     "colores": ["Negro", "Gris"],
-    "descripcion": "Un soporte de auriculares moderno y en voladizo que también es adecuado para auriculares más grandes"
+    "descripcion": "Un soporte de auriculares moderno y en voladizo que también es adecuado para auriculares más grandes",
+    "envio": { "largo": 27, "ancho": 15, "alto": 15, "peso": 250 }
   },
   {
     "id": "organizador-cables",
@@ -30,7 +32,8 @@
     "precio": 6000,
     "imagen": "organizador_cables1.jpg",
     "colores": ["Blanco", "Negro"],
-    "descripcion": "Orden y estilo combinados este organizador ordena tu colección de cables y cargadores. El diseño de rejilla continua proporciona una sujeción firme y una estructura clara ideal para usar en cajones armarios o sobre el escritorio."
+    "descripcion": "Orden y estilo combinados este organizador ordena tu colección de cables y cargadores. El diseño de rejilla continua proporciona una sujeción firme y una estructura clara ideal para usar en cajones armarios o sobre el escritorio.",
+    "envio": { "largo": 15, "ancho": 10, "alto": 5, "peso": 80 }
   },
   {
     "id": "llavero-personalizado",
@@ -41,7 +44,8 @@
     "precio": 3500,
     "imagen": "llavero1.jpg",
     "colores": ["A elección"],
-    "descripcion": "¿Querés un llavero ÚNICO con tu nombre o texto favorito? ¡Este modelo lo hace posible!"
+    "descripcion": "¿Querés un llavero ÚNICO con tu nombre o texto favorito? ¡Este modelo lo hace posible!",
+    "envio": { "largo": 10, "ancho": 8, "alto": 2, "peso": 30 }
   },
   {
     "id": "lampara-lithophane",
@@ -52,7 +56,8 @@
     "precio": 32000,
     "imagen": "lampara1.jpg",
     "colores": ["Blanco"],
-    "descripcion": "Tu foto aparece al encender la luz. Incluye base LED."
+    "descripcion": "Tu foto aparece al encender la luz. Incluye base LED.",
+    "envio": { "largo": 18, "ancho": 15, "alto": 15, "peso": 400 }
   },
   {
     "id": "figura-articulada",
@@ -63,7 +68,8 @@
     "precio": 12000,
     "imagen": "dragon_articulado.jpg",
     "colores": ["Multicolor", "Verde", "Violeta"],
-    "descripcion": "Impreso en una sola pieza, todas las articulaciones se mueven."
+    "descripcion": "Impreso en una sola pieza, todas las articulaciones se mueven.",
+    "envio": { "largo": 32, "ancho": 12, "alto": 8, "peso": 150 }
   },
   {
     "id": "soporte-celular",
@@ -74,7 +80,8 @@
     "precio": 5500,
     "imagen": "soporte_celular1.jpg",
     "colores": ["Negro", "Blanco"],
-    "descripcion": "El soporte para teléfono mantiene tu dispositivo claramente visible y de fácil acceso mientras trabajas, estudias o ves vídeos. El gran compartimento de almacenamiento puede guardar bolígrafos, lápices, marcadores, tijeras y otros pequeños accesorios de escritorio"
+    "descripcion": "El soporte para teléfono mantiene tu dispositivo claramente visible y de fácil acceso mientras trabajas, estudias o ves vídeos. El gran compartimento de almacenamiento puede guardar bolígrafos, lápices, marcadores, tijeras y otros pequeños accesorios de escritorio",
+    "envio": { "largo": 20, "ancho": 12, "alto": 12, "peso": 250 }
   },
   {
     "id": "portavelas",
@@ -85,6 +92,7 @@
     "precio": 4500,
     "imagen": "portavelas.png",
     "colores": ["Blanco", "Dorado"],
-    "descripcion": "Diseño calado que proyecta sombras en la pared."
+    "descripcion": "Diseño calado que proyecta sombras en la pared.",
+    "envio": { "largo": 12, "ancho": 12, "alto": 12, "peso": 120 }
   }
 ]

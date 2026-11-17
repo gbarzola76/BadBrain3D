@@ -7,12 +7,18 @@
     "fondo": "#F6F6F3"
   },
   "contacto": {
-    "whatsapp": "5491100000000",
-    "email": "hola@tumarca.com",
+    "whatsapp": "5491134288422",
+    "email": "gbarzola@gmail.com",
     "instagram": "tumarca",
     "ciudad": "Buenos Aires"
   },
   "moneda": "ARS",
+  "mercadopago": {
+    "activo": false,
+    "envio": "fijo",
+    "costoEnvio": 0,
+    "retiroEnTaller": false
+  },
   "hero": {
     "titulo": "Tu idea, capa por capa, lista para usar.",
     "texto": "Comprá piezas de nuestro catálogo o mandanos tu archivo STL y lo imprimimos en el material y color que necesites.",

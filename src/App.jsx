@@ -17,6 +17,12 @@ async function obtener(url) {
   return r.json();
 }
 
+const MENSAJES_PAGO = {
+  aprobado: '¡Pago aprobado! Gracias por tu compra. Te escribimos para coordinar colores y entrega.',
+  pendiente: 'Tu pago quedó pendiente. Cuando Mercado Pago lo acredite te avisamos.',
+  rechazado: 'El pago no se pudo completar. Podés intentar de nuevo o escribirnos por WhatsApp.'
+};
+
 export default function App() {
   const [sitio, setSitio] = useState(null);
   const [productos, setProductos] = useState([]);
@@ -26,6 +32,16 @@ export default function App() {
     try { return JSON.parse(localStorage.getItem('carrito')) || {}; } catch { return {}; }
   });
   const [carritoAbierto, setCarritoAbierto] = useState(false);
+
+  // Vuelta desde Mercado Pago: ?pago=aprobado | pendiente | rechazado
+  const [avisoPago, setAvisoPago] = useState(() => {
+    try { return new URLSearchParams(window.location.search).get('pago'); } catch { return null; }
+  });
+  useEffect(() => {
+    if (!avisoPago) return;
+    if (avisoPago === 'aprobado') setCarrito({});
+    window.history.replaceState(null, '', window.location.pathname + window.location.hash);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     Promise.all([
@@ -81,6 +97,14 @@ export default function App() {
   return (
     <>
       <Header sitio={sitio} unidades={unidades} abrirCarrito={() => setCarritoAbierto(true)} />
+      {MENSAJES_PAGO[avisoPago] && (
+        <div className={`aviso-pago aviso-pago--${avisoPago}`} role="status">
+          <div className="contenedor aviso-pago__fila">
+            <span>{MENSAJES_PAGO[avisoPago]}</span>
+            <button className="boton-icono" onClick={() => setAvisoPago(null)} aria-label="Cerrar aviso">×</button>
+          </div>
+        </div>
+      )}
       <main>
         <Hero sitio={sitio} />
         <Beneficios items={sitio.beneficios} />

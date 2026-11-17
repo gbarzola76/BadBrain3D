@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Icono from './Icono.jsx';
 import Imagen from './Imagen.jsx';
 import { formatoPrecio, linkWhatsApp } from '../util.js';
@@ -12,6 +12,29 @@ export default function Carrito({ abierto, cerrar, items, sitio, cambiarCantidad
   const totalTexto = !conPrecio
     ? 'A consultar'
     : `${formatoPrecio(total, sitio.moneda)}${hayAConsultar ? ' + a consultar' : ''}`;
+
+  // Pago con Mercado Pago: el Worker arma el cobro con los precios del catálogo.
+  const mp = sitio.mercadopago || {};
+  const [pagando, setPagando] = useState(false);
+  const [errorPago, setErrorPago] = useState('');
+
+  async function pagar() {
+    setPagando(true);
+    setErrorPago('');
+    try {
+      const r = await fetch('./api/pago', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: items.map((i) => ({ id: i.id, cantidad: i.cantidad })) })
+      });
+      const datos = await r.json().catch(() => ({}));
+      if (!r.ok || !datos.url) throw new Error(datos.error || 'No se pudo iniciar el pago.');
+      window.location.href = datos.url;
+    } catch (err) {
+      setErrorPago(err.message);
+      setPagando(false);
+    }
+  }
 
   useEffect(() => {
     if (!abierto) return;
@@ -60,6 +83,24 @@ export default function Carrito({ abierto, cerrar, items, sitio, cambiarCantidad
             </ul>
             <div className="carrito__pie">
               <div className="carrito__total"><span>Total</span><strong>{totalTexto}</strong></div>
+              {mp.activo && (
+                <>
+                  <button className="boton boton--oscuro boton--ancho" onClick={pagar}
+                    disabled={pagando || hayAConsultar} tabIndex={abierto ? 0 : -1}>
+                    <Icono nombre="tarjeta" tam={20} /> {pagando ? 'Abriendo Mercado Pago…' : 'Pagar con Mercado Pago'}
+                  </button>
+                  <p className="carrito__nota">
+                    {hayAConsultar
+                      ? 'Hay productos a consultar: pedilos por WhatsApp.'
+                      : mp.envio === 'mercadoenvios'
+                        ? 'El envío lo calcula Mercado Envíos con tu código postal.'
+                        : mp.envio === 'fijo' && mp.costoEnvio > 0
+                          ? `Envío: ${formatoPrecio(mp.costoEnvio, sitio.moneda)}.`
+                          : 'El envío lo coordinamos por WhatsApp después del pago.'}
+                  </p>
+                  {errorPago && <p className="error" role="alert">{errorPago}</p>}
+                </>
+              )}
               <a className="boton boton--acento boton--ancho" href={linkWhatsApp(sitio.contacto.whatsapp, texto)}
                 target="_blank" rel="noreferrer" tabIndex={abierto ? 0 : -1}>
                 <Icono nombre="whatsapp" tam={20} /> Enviar pedido por WhatsApp

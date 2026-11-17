@@ -265,3 +265,13 @@ p { margin: 0; }
   .buscador { width: 100%; }
   .buscador input { min-width: 0; flex: 1; }
 }
+
+/* Mercado Pago: nota del carrito y aviso al volver del pago */
+.carrito__nota { margin: -4px 0 0; font-size: .85rem; color: var(--texto-suave); text-align: center; }
+.carrito__pie .boton[disabled] { opacity: .55; cursor: not-allowed; }
+.aviso-pago { padding: 12px 0; font-weight: 500; }
+.aviso-pago--aprobado { background: #DCFCE7; color: #14532D; }
+.aviso-pago--pendiente { background: #FEF9C3; color: #713F12; }
+.aviso-pago--rechazado { background: #FEE2E2; color: #7F1D1D; }
+.aviso-pago__fila { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.aviso-pago .boton-icono { color: inherit; font-size: 1.4rem; line-height: 1; }
