@@ -28,7 +28,11 @@ export default function App() {
   const [carritoAbierto, setCarritoAbierto] = useState(false);
 
   useEffect(() => {
-    Promise.all([obtener('/api/sitio'), obtener('/api/productos'), obtener('/api/muestrario')])
+    Promise.all([
+      obtener('./contenido/sitio.json'),
+      obtener('./contenido/productos.json'),
+      obtener('./contenido/muestrario.json')
+    ])
       .then(([s, p, m]) => { setSitio(s); setProductos(p); setMuestrario(m); })
       .catch((e) => setError(e.message));
   }, []);

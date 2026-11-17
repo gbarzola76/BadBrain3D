@@ -1,0 +1,7 @@
+Poné acá las fotos de tus productos y trabajos (jpg, png o webp).
+
+Después, en productos.json o muestrario.json, escribí el nombre del archivo en "imagen".
+Ejemplo:  "imagen": "maceta.jpg"
+
+Si "imagen" queda vacío, la página muestra un dibujo de reemplazo.
+Recomendado: fotos cuadradas de al menos 800x800 px, fondo liso.

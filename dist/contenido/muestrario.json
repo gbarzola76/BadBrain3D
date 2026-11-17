@@ -1,0 +1,11 @@
+[
+  { "id": "m1", "titulo": "Repuesto de electrodoméstico", "categoria": "Funcional", "material": "PETG", "imagen": "", "alto": "alto", "descripcion": "Engranaje reemplazado a partir de la pieza rota del cliente." },
+  { "id": "m2", "titulo": "Miniaturas para juego de rol", "categoria": "Figuras", "material": "PLA", "imagen": "", "alto": "normal", "descripcion": "Set de 12 miniaturas de 32 mm, listas para pintar." },
+  { "id": "m3", "titulo": "Maqueta de arquitectura", "categoria": "Maquetas", "material": "PLA", "imagen": "", "alto": "normal", "descripcion": "Escala 1:200 para presentación de proyecto." },
+  { "id": "m4", "titulo": "Jarrón espiral", "categoria": "Deco", "material": "PLA", "imagen": "", "alto": "alto", "descripcion": "Impreso en modo vaso, una sola pared continua." },
+  { "id": "m5", "titulo": "Carcasa para Arduino", "categoria": "Funcional", "material": "PETG", "imagen": "", "alto": "normal", "descripcion": "Diseño a medida con encastres y ventilación." },
+  { "id": "m6", "titulo": "Busto personalizado", "categoria": "Figuras", "material": "PLA", "imagen": "", "alto": "alto", "descripcion": "Modelado a partir de fotos del cliente." },
+  { "id": "m7", "titulo": "Cortantes de galletitas", "categoria": "Deco", "material": "PLA", "imagen": "", "alto": "normal", "descripcion": "Set de formas personalizadas para una pastelería." },
+  { "id": "m8", "titulo": "Prototipo de producto", "categoria": "Maquetas", "material": "PLA", "imagen": "", "alto": "normal", "descripcion": "Tres iteraciones de diseño en una semana." },
+  { "id": "m9", "titulo": "Funda flexible", "categoria": "Funcional", "material": "TPU", "imagen": "", "alto": "normal", "descripcion": "Protección a medida para un equipo de medición." }
+]

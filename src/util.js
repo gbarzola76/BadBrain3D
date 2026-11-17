@@ -11,7 +11,8 @@ export function linkWhatsApp(numero, texto = '') {
 export function urlImagen(nombre) {
   if (!nombre) return '';
   if (/^https?:\/\//.test(nombre) || nombre.startsWith('/')) return nombre;
-  return `/imagenes/${nombre}`;
+  // Ruta relativa: funciona con Vite (public/) y en hosting estático (base: './')
+  return `./contenido/imagenes/${nombre}`;
 }
 
 // Número estable a partir de un texto (para variar los dibujos de reemplazo)

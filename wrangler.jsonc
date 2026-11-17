@@ -1,0 +1,10 @@
+// Configuración de Cloudflare (Worker "badbrain3d"): sirve la web compilada de dist/.
+// Antes de subir cambios: npm run build (genera dist/ con el contenido de public/).
+{
+  "name": "badbrain3d",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}

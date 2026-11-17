@@ -1,0 +1,9 @@
+node_modules
+# dist/ se sube a GitHub: es lo que publica Cloudflare (ver wrangler.jsonc)
+.vs
+.wrangler
+server/data/consultas.json
+server/data/archivos/*
+!server/data/archivos/.gitkeep
+.DS_Store
+.claude/
