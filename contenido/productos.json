@@ -48,9 +48,9 @@
     "nombre": "Lámpara lithophane",
     "categoria": "Regalos",
     "material": "PLA",
-    "medida": "15 cm",
-    "precio": 22000,
-    "imagen": "",
+    "medida": "13 cm",
+    "precio": 32000,
+    "imagen": "lampara1.jpg",
     "colores": ["Blanco"],
     "descripcion": "Tu foto aparece al encender la luz. Incluye base LED."
   },
@@ -67,23 +67,23 @@
   },
   {
     "id": "soporte-celular",
-    "nombre": "Soporte para celular",
+    "nombre": "Organizador de Escritorio Minimalista con Soporte para Teléfono y Bolígrafos",
     "categoria": "Escritorio",
-    "material": "PETG",
+    "material": "PLA",
     "medida": "Ajustable",
     "precio": 5500,
-    "imagen": "",
+    "imagen": "soporte_celular1.jpg",
     "colores": ["Negro", "Blanco"],
-    "descripcion": "Ángulo regulable, compatible con cualquier teléfono."
+    "descripcion": "El soporte para teléfono mantiene tu dispositivo claramente visible y de fácil acceso mientras trabajas, estudias o ves vídeos. El gran compartimento de almacenamiento puede guardar bolígrafos, lápices, marcadores, tijeras y otros pequeños accesorios de escritorio"
   },
   {
     "id": "portavelas",
     "nombre": "Portavelas",
     "categoria": "Hogar",
     "material": "PLA",
-    "medida": "8 cm",
+    "medida": "9 cm",
     "precio": 4500,
-    "imagen": "",
+    "imagen": "portavelas.png",
     "colores": ["Blanco", "Dorado"],
     "descripcion": "Diseño calado que proyecta sombras en la pared."
   }

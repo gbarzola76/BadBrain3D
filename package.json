@@ -5,6 +5,8 @@
   "type": "module",
   "description": "Tienda y muestrario de impresiones 3D — Node.js (Express) + React (Vite)",
   "scripts": {
+    "predev": "node scripts/copiar-contenido.js",
+    "prebuild": "node scripts/copiar-contenido.js",
     "dev": "concurrently -n api,web -c yellow,cyan \"node --watch server/index.js\" \"vite\"",
     "build": "vite build",
     "start": "node server/index.js",

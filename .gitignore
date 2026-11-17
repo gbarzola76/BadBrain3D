@@ -7,3 +7,5 @@ server/data/archivos/*
 !server/data/archivos/.gitkeep
 .DS_Store
 .claude/
+# public/contenido/ se genera solo desde contenido/ (scripts/copiar-contenido.js)
+public/contenido/
