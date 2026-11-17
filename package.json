@@ -1,0 +1,34 @@
+{
+  "name": "tienda-impresiones-3d",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tienda y muestrario de impresiones 3D — Node.js (Express) + React (Vite)",
+  "scripts": {
+    "dev": "concurrently -n api,web -c yellow,cyan \"node --watch server/index.js\" \"vite\"",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "preview": "npm run build && npm start"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "multer": "^2.0.2"
+  },
+  "devDependencies": {
+    "@fontsource-variable/inter": "^5.2.5",
+    "@fontsource-variable/space-grotesk": "^5.2.5",
+    "@fontsource/abril-fatface": "^5.3.0",
+    "@fontsource/anton": "^5.3.0",
+    "@fontsource/permanent-marker": "^5.3.0",
+    "@fontsource/rubik-mono-one": "^5.3.0",
+    "@fontsource/special-elite": "^5.3.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "concurrently": "^9.1.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^6.3.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
