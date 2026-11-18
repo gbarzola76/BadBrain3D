@@ -96,7 +96,7 @@ export default function Carrito({ abierto, cerrar, items, sitio, cambiarCantidad
                         ? 'El envío lo calcula Mercado Envíos con tu código postal.'
                         : mp.envio === 'fijo' && mp.costoEnvio > 0
                           ? `Envío: ${formatoPrecio(mp.costoEnvio, sitio.moneda)}.`
-                          : 'El envío lo coordinamos por WhatsApp después del pago.'}
+                          : 'El envío es a cargo del comprador: lo cotizamos y coordinamos por WhatsApp después del pago.'}
                   </p>
                   {errorPago && <p className="error" role="alert">{errorPago}</p>}
                 </>
