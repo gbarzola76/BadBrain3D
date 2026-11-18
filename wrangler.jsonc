@@ -4,7 +4,7 @@
 // - La clave MP_ACCESS_TOKEN es un secreto: se carga en Cloudflare → badbrain3d →
 //   Settings → Variables and Secrets (y en .dev.vars para probar en tu compu).
 {
-  "name": "badbrain3d",
+  "name": "tienda",
   "main": "worker/index.js",
   "compatibility_date": "2026-11-01",
   "assets": {
