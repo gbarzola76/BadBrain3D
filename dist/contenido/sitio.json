@@ -19,6 +19,10 @@
     "costoEnvio": 0,
     "retiroEnTaller": false
   },
+  "muestrario": {
+    "titulo": "Especial Fiestas",
+    "texto": "Ideas para decorar, poner la mesa y regalar esta Navidad. Pedí con tiempo: en diciembre se llena la agenda."
+  },
   "hero": {
     "titulo": "Tu idea, capa por capa, lista para usar.",
     "texto": "Comprá piezas de nuestro catálogo o mandanos tu archivo STL y lo imprimimos en el material y color que necesites.",

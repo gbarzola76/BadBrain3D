@@ -110,7 +110,7 @@ export default function App() {
         <Beneficios items={sitio.beneficios} />
         <Catalogo productos={productos} moneda={sitio.moneda} carrito={carrito}
           agregar={(id) => cambiarCantidad(id, 1)} />
-        <Muestrario trabajos={muestrario} />
+        <Muestrario trabajos={muestrario} textos={sitio.muestrario} />
         <ComoFunciona pasos={sitio.pasos} />
         <Materiales materiales={sitio.materiales} />
         <Cotizar sitio={sitio} />

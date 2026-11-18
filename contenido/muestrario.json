@@ -1,11 +1,13 @@
 [
-  { "id": "m1", "titulo": "Repuesto de electrodoméstico", "categoria": "Funcional", "material": "PETG", "imagen": "", "alto": "alto", "descripcion": "Engranaje reemplazado a partir de la pieza rota del cliente." },
-  { "id": "m2", "titulo": "Miniaturas para juego de rol", "categoria": "Figuras", "material": "PLA", "imagen": "", "alto": "normal", "descripcion": "Set de 12 miniaturas de 32 mm, listas para pintar." },
-  { "id": "m3", "titulo": "Maqueta de arquitectura", "categoria": "Maquetas", "material": "PLA", "imagen": "", "alto": "normal", "descripcion": "Escala 1:200 para presentación de proyecto." },
-  { "id": "m4", "titulo": "Jarrón espiral", "categoria": "Deco", "material": "PLA", "imagen": "", "alto": "alto", "descripcion": "Impreso en modo vaso, una sola pared continua." },
-  { "id": "m5", "titulo": "Carcasa para Arduino", "categoria": "Funcional", "material": "PETG", "imagen": "", "alto": "normal", "descripcion": "Diseño a medida con encastres y ventilación." },
-  { "id": "m6", "titulo": "Busto personalizado", "categoria": "Figuras", "material": "PLA", "imagen": "", "alto": "alto", "descripcion": "Modelado a partir de fotos del cliente." },
-  { "id": "m7", "titulo": "Cortantes de galletitas", "categoria": "Deco", "material": "PLA", "imagen": "", "alto": "normal", "descripcion": "Set de formas personalizadas para una pastelería." },
-  { "id": "m8", "titulo": "Prototipo de producto", "categoria": "Maquetas", "material": "PLA", "imagen": "", "alto": "normal", "descripcion": "Tres iteraciones de diseño en una semana." },
-  { "id": "m9", "titulo": "Funda flexible", "categoria": "Funcional", "material": "TPU", "imagen": "", "alto": "normal", "descripcion": "Protección a medida para un equipo de medición." }
+  { "id": "n1", "titulo": "Adornos con nombre", "categoria": "Árbol", "material": "PLA", "imagen": "", "alto": "normal", "descripcion": "Esferas y colgantes personalizados con el nombre de cada integrante de la familia." },
+  { "id": "n2", "titulo": "Estrella para la punta del árbol", "categoria": "Árbol", "material": "PLA", "imagen": "", "alto": "alto", "descripcion": "Diseño calado que deja pasar la luz de las guirnaldas." },
+  { "id": "n3", "titulo": "Copos de nieve colgantes", "categoria": "Árbol", "material": "PLA", "imagen": "", "alto": "normal", "descripcion": "Set de 6 modelos distintos, en blanco o con brillo." },
+  { "id": "n4", "titulo": "Pesebre navideño", "categoria": "Deco", "material": "PLA", "imagen": "", "alto": "alto", "descripcion": "Nacimiento completo de 8 piezas, listo para pintar o en un solo color." },
+  { "id": "n5", "titulo": "Arbolito de escritorio", "categoria": "Deco", "material": "PLA", "imagen": "", "alto": "alto", "descripcion": "Impreso en espiral, con lugar para una vela LED adentro." },
+  { "id": "n6", "titulo": "Calendario de Adviento", "categoria": "Deco", "material": "PLA", "imagen": "", "alto": "normal", "descripcion": "Cuenta regresiva con 24 cajoncitos numerados." },
+  { "id": "n7", "titulo": "Centro de mesa con portavelas", "categoria": "Mesa", "material": "PETG", "imagen": "", "alto": "normal", "descripcion": "Para la cena de Nochebuena, resistente al calor de las velas." },
+  { "id": "n8", "titulo": "Marcadores de lugar", "categoria": "Mesa", "material": "PLA", "imagen": "", "alto": "normal", "descripcion": "Tarjetitas con el nombre de cada invitado para la mesa de las fiestas." },
+  { "id": "n9", "titulo": "Cortantes de galletitas navideñas", "categoria": "Mesa", "material": "PLA", "imagen": "", "alto": "normal", "descripcion": "Árbol, estrella, reno y muñeco de jengibre para hornear con los chicos." },
+  { "id": "n10", "titulo": "Regalos empresariales", "categoria": "Regalos", "material": "PLA", "imagen": "", "alto": "normal", "descripcion": "Llaveros y soportes con el logo de tu empresa, en cantidad." },
+  { "id": "n11", "titulo": "Etiquetas para regalos", "categoria": "Regalos", "material": "PLA", "imagen": "", "alto": "normal", "descripcion": "Colgantes con nombre que después quedan como adorno del árbol." }
 ]

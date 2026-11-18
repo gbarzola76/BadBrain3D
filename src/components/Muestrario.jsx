@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import Imagen from './Imagen.jsx';
 import Icono from './Icono.jsx';
 
-export default function Muestrario({ trabajos }) {
+export default function Muestrario({ trabajos, textos = {} }) {
   const [categoria, setCategoria] = useState('Todos');
   const [abierto, setAbierto] = useState(null); // índice dentro de "visibles"
 
@@ -33,8 +33,8 @@ export default function Muestrario({ trabajos }) {
       <div className="contenedor">
         <div className="seccion__cabecera">
           <div>
-            <h2>Muestrario</h2>
-            <p className="bajada">Algunos trabajos que imprimimos para nuestros clientes.</p>
+            <h2>{textos.titulo || 'Muestrario'}</h2>
+            <p className="bajada">{textos.texto || 'Algunos trabajos que imprimimos para nuestros clientes.'}</p>
           </div>
         </div>
         <div className="filtros" role="group" aria-label="Filtrar trabajos">
