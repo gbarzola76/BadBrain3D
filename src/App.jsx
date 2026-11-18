@@ -49,7 +49,11 @@ export default function App() {
       obtener('./contenido/productos.json'),
       obtener('./contenido/muestrario.json')
     ])
-      .then(([s, p, m]) => { setSitio(s); setProductos(p); setMuestrario(m); })
+      // Solo se muestran los productos y trabajos que tienen foto cargada.
+      .then(([s, p, m]) => {
+        const conFoto = (x) => typeof x.imagen === 'string' && x.imagen.trim() !== '';
+        setSitio(s); setProductos(p.filter(conFoto)); setMuestrario(m.filter(conFoto));
+      })
       .catch((e) => setError(e.message));
   }, []);
 
