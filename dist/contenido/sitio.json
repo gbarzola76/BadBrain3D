@@ -14,7 +14,7 @@
   },
   "moneda": "ARS",
   "mercadopago": {
-    "activo": false,
+    "activo": true,
     "envio": "fijo",
     "costoEnvio": 0,
     "retiroEnTaller": false

@@ -86,47 +86,79 @@ async function crearPago(request, env, url) {
   }
 
   const referencia = crypto.randomUUID();
-  const preferencia = {
-    items,
-    external_reference: referencia,
-    back_urls: {
-      success: `${url.origin}/?pago=aprobado`,
-      pending: `${url.origin}/?pago=pendiente`,
-      failure: `${url.origin}/?pago=rechazado`
-    },
-    statement_descriptor: 'BADBRAIN3D'
-  };
+  const vuelta = (estado) => `${url.origin}/?pago=${estado}`;
   // Mercado Pago solo acepta volver automáticamente a direcciones https (no a localhost).
-  if (url.protocol === 'https:') preferencia.auto_return = 'approved';
+  const autoVuelta = url.protocol === 'https:';
 
   if (modoEnvio === 'mercadoenvios') {
+    // Mercado Envíos solo existe en la API de Preferences (la de Orders no calcula envíos).
     const { largo, ancho, alto, peso } = paquete;
     if (Math.max(largo, ancho, alto) > 150 || largo + ancho + alto > 330 || peso > 30000) {
       return responder({ error: 'El pedido es muy grande para un solo envío. Escribinos por WhatsApp.' }, 400);
     }
-    preferencia.shipments = {
-      mode: 'me2',
-      dimensions: `${Math.ceil(largo)}x${Math.ceil(ancho)}x${Math.ceil(alto)},${Math.ceil(peso)}`,
-      local_pickup: Boolean(config.retiroEnTaller)
+    const preferencia = {
+      items,
+      external_reference: referencia,
+      back_urls: { success: vuelta('aprobado'), pending: vuelta('pendiente'), failure: vuelta('rechazado') },
+      statement_descriptor: 'BADBRAIN3D',
+      shipments: {
+        mode: 'me2',
+        dimensions: `${Math.ceil(largo)}x${Math.ceil(ancho)}x${Math.ceil(alto)},${Math.ceil(peso)}`,
+        local_pickup: Boolean(config.retiroEnTaller)
+      }
     };
-  } else if (modoEnvio === 'fijo' && esPositivo(config.costoEnvio)) {
-    preferencia.shipments = { mode: 'not_specified', cost: config.costoEnvio };
+    if (autoVuelta) preferencia.auto_return = 'approved';
+    const datos = await llamarMP(env, 'https://api.mercadopago.com/checkout/preferences', preferencia, referencia);
+    return datos?.init_point ? responder({ url: datos.init_point }) : errorMP();
   }
 
-  const r = await fetch('https://api.mercadopago.com/checkout/preferences', {
+  // API de Orders (la recomendada): montos como texto con dos decimales.
+  const lineasOrden = items.map((i) => ({
+    external_code: i.id,
+    title: i.title,
+    description: i.description || undefined,
+    picture_url: i.picture_url,
+    category_id: i.category_id,
+    quantity: i.quantity,
+    unit_price: i.unit_price.toFixed(2)
+  }));
+  if (modoEnvio === 'fijo' && esPositivo(config.costoEnvio)) {
+    lineasOrden.push({ external_code: 'envio', title: 'Envío', quantity: 1, unit_price: config.costoEnvio.toFixed(2) });
+  }
+  const total = lineasOrden.reduce((t, i) => t + Number(i.unit_price) * i.quantity, 0);
+  const online = { success_url: vuelta('aprobado'), pending_url: vuelta('pendiente'), failure_url: vuelta('rechazado') };
+  if (autoVuelta) online.auto_return = 'approved';
+  const orden = {
+    type: 'online',
+    processing_mode: 'manual',
+    total_amount: total.toFixed(2),
+    external_reference: referencia,
+    description: `Pedido ${sitio.marca || 'Bad Brain 3D'}`.slice(0, 150),
+    items: lineasOrden,
+    config: { statement_descriptor: 'BADBRAIN3D', online }
+  };
+  const datos = await llamarMP(env, 'https://api.mercadopago.com/v1/orders', orden, referencia);
+  return datos?.checkout_url ? responder({ url: datos.checkout_url }) : errorMP();
+}
+
+const errorMP = () =>
+  responder({ error: 'Mercado Pago no pudo generar el pago. Probá de nuevo o escribinos por WhatsApp.' }, 502);
+
+async function llamarMP(env, endpoint, cuerpo, clave) {
+  const r = await fetch(endpoint, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${env.MP_ACCESS_TOKEN}`,
       'Content-Type': 'application/json',
-      'X-Idempotency-Key': referencia
+      'X-Idempotency-Key': clave
     },
-    body: JSON.stringify(preferencia)
+    body: JSON.stringify(cuerpo)
   });
   const datos = await r.json().catch(() => ({}));
-  if (!r.ok || !datos.init_point) {
+  if (!r.ok) {
     // El detalle queda en los logs del Worker (Cloudflare → badbrain3d → Observability).
-    console.error('Mercado Pago rechazó la preferencia', r.status, JSON.stringify(datos));
-    return responder({ error: 'Mercado Pago no pudo generar el pago. Probá de nuevo o escribinos por WhatsApp.' }, 502);
+    console.error('Mercado Pago rechazó el pedido', endpoint, r.status, JSON.stringify(datos));
+    return null;
   }
-  return responder({ url: datos.init_point });
+  return datos;
 }
