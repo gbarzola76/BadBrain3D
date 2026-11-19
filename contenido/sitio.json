@@ -13,6 +13,12 @@
     "ciudad": "Buenos Aires"
   },
   "moneda": "ARS",
+  "seo": {
+    "url": "https://tienda.badbrain3d.workers.dev",
+    "titulo": "Bad Brain 3D | Impresión 3D a pedido en Buenos Aires",
+    "descripcion": "Impresión 3D a pedido en Buenos Aires: adornos navideños y regalos personalizados, macetas, lámparas, organizadores y piezas a medida en PLA, PETG y TPU. Envíos a todo el país.",
+    "imagen": "adorno_nav_personal.jpg"
+  },
   "mercadopago": {
     "activo": true,
     "envio": "fijo",

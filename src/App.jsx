@@ -67,7 +67,7 @@ export default function App() {
     if (c.fondo) raiz.setProperty('--fondo', c.fondo);
     if (c.punk) raiz.setProperty('--punk', c.punk);
     if (c.amarillo) raiz.setProperty('--amarillo', c.amarillo);
-    document.title = `${sitio.marca} — ${sitio.eslogan}`;
+    document.title = sitio.seo?.titulo || `${sitio.marca} — ${sitio.eslogan}`;
   }, [sitio]);
 
   useEffect(() => {

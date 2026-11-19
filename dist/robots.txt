@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Sitemap: https://tienda.badbrain3d.workers.dev/sitemap.xml
