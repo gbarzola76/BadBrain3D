@@ -1,7 +1,7 @@
 // Copia contenido/ → public/contenido/ antes de "npm run dev" y "npm run build".
 // Así se edita en un solo lugar (contenido/) y la web siempre usa lo último.
 // También revisa que los JSON estén bien escritos y que existan las fotos que nombran.
-import { cpSync, existsSync, readFileSync } from 'node:fs';
+import { cpSync, existsSync, readFileSync, rmSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -36,5 +36,7 @@ if (errores) {
 }
 for (const a of avisos) console.warn(`⚠ ${a} — se va a ver el dibujo de reemplazo.`);
 
+// Se borra la copia anterior para que no queden fotos que ya no están en contenido/.
+rmSync(destino, { recursive: true, force: true });
 cpSync(origen, destino, { recursive: true, force: true });
 console.log('✓ contenido/ copiado a public/contenido/');
