@@ -7,9 +7,18 @@
     "medida": "65mm de Altura - Tamaño Ajustable",
     "precio": 14000,
     "imagen": "maceta1.jpg",
-    "colores": ["Blanco", "Negro", "Terracota"],
+    "colores": [
+      "Blanco",
+      "Negro",
+      "Terracota"
+    ],
     "descripcion": "Este conjunto de tres macetas distintas para suculentas combina la complejidad estructural con la simplicidad funcional. Diseñado para quienes aprecian las líneas nítidas, las texturas paramétricas y un sofisticado estilo",
-    "envio": { "largo": 10, "ancho": 10, "alto": 10, "peso": 150 }
+    "envio": {
+      "largo": 10,
+      "ancho": 10,
+      "alto": 10,
+      "peso": 150
+    }
   },
   {
     "id": "soporte-auriculares",
@@ -19,9 +28,17 @@
     "medida": "24 cm",
     "precio": 7500,
     "imagen": "soporte_auricular1.jpg",
-    "colores": ["Negro", "Gris"],
+    "colores": [
+      "Negro",
+      "Gris"
+    ],
     "descripcion": "Un soporte de auriculares moderno y en voladizo que también es adecuado para auriculares más grandes",
-    "envio": { "largo": 27, "ancho": 15, "alto": 15, "peso": 250 }
+    "envio": {
+      "largo": 27,
+      "ancho": 15,
+      "alto": 15,
+      "peso": 250
+    }
   },
   {
     "id": "organizador-cables",
@@ -31,9 +48,17 @@
     "medida": "192 x 130 x 75 mm",
     "precio": 40000,
     "imagen": "organizador_cables1.jpg",
-    "colores": ["Blanco", "Negro"],
+    "colores": [
+      "Blanco",
+      "Negro"
+    ],
     "descripcion": "Orden y estilo combinados este organizador ordena tu colección de cables y cargadores. El diseño de rejilla continua proporciona una sujeción firme y una estructura clara ideal para usar en cajones armarios o sobre el escritorio.",
-    "envio": { "largo": 15, "ancho": 10, "alto": 5, "peso": 80 }
+    "envio": {
+      "largo": 15,
+      "ancho": 10,
+      "alto": 5,
+      "peso": 80
+    }
   },
   {
     "id": "llavero-personalizado",
@@ -43,9 +68,16 @@
     "medida": "6 cm",
     "precio": 3500,
     "imagen": "llavero1.jpg",
-    "colores": ["A elección"],
+    "colores": [
+      "A elección"
+    ],
     "descripcion": "¿Querés un llavero ÚNICO con tu nombre o texto favorito? ¡Este modelo lo hace posible!",
-    "envio": { "largo": 10, "ancho": 8, "alto": 2, "peso": 30 }
+    "envio": {
+      "largo": 10,
+      "ancho": 8,
+      "alto": 2,
+      "peso": 30
+    }
   },
   {
     "id": "lampara-lithophane",
@@ -55,9 +87,16 @@
     "medida": "13 cm",
     "precio": 55000,
     "imagen": "lampara1.jpg",
-    "colores": ["Blanco"],
+    "colores": [
+      "Blanco"
+    ],
     "descripcion": "Tu foto aparece al encender la luz. Incluye base LED.",
-    "envio": { "largo": 18, "ancho": 15, "alto": 15, "peso": 400 }
+    "envio": {
+      "largo": 18,
+      "ancho": 15,
+      "alto": 15,
+      "peso": 400
+    }
   },
   {
     "id": "figura-articulada",
@@ -67,9 +106,18 @@
     "medida": "30 cm",
     "precio": 15000,
     "imagen": "dragon_articulado.jpg",
-    "colores": ["Multicolor", "Verde", "Violeta"],
+    "colores": [
+      "Multicolor",
+      "Verde",
+      "Violeta"
+    ],
     "descripcion": "Impreso en una sola pieza, todas las articulaciones se mueven.",
-    "envio": { "largo": 32, "ancho": 12, "alto": 8, "peso": 150 }
+    "envio": {
+      "largo": 32,
+      "ancho": 12,
+      "alto": 8,
+      "peso": 150
+    }
   },
   {
     "id": "soporte-celular",
@@ -79,9 +127,17 @@
     "medida": "Ajustable",
     "precio": 15000,
     "imagen": "soporte_celular1.jpg",
-    "colores": ["Negro", "Blanco"],
+    "colores": [
+      "Negro",
+      "Blanco"
+    ],
     "descripcion": "El soporte para teléfono mantiene tu dispositivo claramente visible y de fácil acceso mientras trabajas, estudias o ves vídeos. El gran compartimento de almacenamiento puede guardar bolígrafos, lápices, marcadores, tijeras y otros pequeños accesorios de escritorio",
-    "envio": { "largo": 20, "ancho": 12, "alto": 12, "peso": 250 }
+    "envio": {
+      "largo": 20,
+      "ancho": 12,
+      "alto": 12,
+      "peso": 250
+    }
   },
   {
     "id": "portavelas",
@@ -91,8 +147,285 @@
     "medida": "9 cm",
     "precio": 65000,
     "imagen": "portavelas.png",
-    "colores": ["Blanco", "Dorado"],
+    "colores": [
+      "Blanco",
+      "Dorado"
+    ],
     "descripcion": "Un poco festivo, un poco mágico y hecho para brillar, reúne tres diseños bellamente detallados, desde auroras boreales en espiral hasta un árbol de Navidad elegantemente decorado y una corona festiva.",
-    "envio": { "largo": 12, "ancho": 12, "alto": 12, "peso": 120 }
+    "envio": {
+      "largo": 12,
+      "ancho": 12,
+      "alto": 12,
+      "peso": 120
+    }
+  },
+  {
+    "id": "adorno-navideno-nombre",
+    "nombre": "Adorno navideño con nombre",
+    "categoria": "Navidad",
+    "material": "PLA",
+    "medida": "8,6 x 6,9 cm",
+    "precio": 5000,
+    "imagen": "adorno_nav_personal.jpg",
+    "colores": [
+      "Rojo",
+      "Verde",
+      "Blanco"
+    ],
+    "descripcion": "Esfera con escena invernal y el nombre en relieve. Uno para cada integrante de la familia.",
+    "envio": {
+      "largo": 12,
+      "ancho": 10,
+      "alto": 3,
+      "peso": 40
+    }
+  },
+  {
+    "id": "cortantes-navidenos",
+    "nombre": "Set de cortantes navideños x8",
+    "categoria": "Navidad",
+    "material": "PLA",
+    "medida": "7 cm aprox. c/u",
+    "precio": 18000,
+    "imagen": "cortantes_nav.jpg",
+    "colores": [
+      "Rojo",
+      "Verde",
+      "Blanco"
+    ],
+    "descripcion": "Manopla, casita de jengibre, regalo, muñequito, gorro, arbolito, muñeco de nieve y cabaña.",
+    "envio": {
+      "largo": 25,
+      "ancho": 20,
+      "alto": 5,
+      "peso": 200
+    }
+  },
+  {
+    "id": "pesebre-navideno",
+    "nombre": "Pesebre navideño",
+    "categoria": "Navidad",
+    "material": "PLA",
+    "medida": "20 cm de ancho aprox.",
+    "precio": 35000,
+    "imagen": "pesebre1.jpg",
+    "colores": [
+      "Beige",
+      "Blanco",
+      "Dorado"
+    ],
+    "descripcion": "Nacimiento completo para armar junto al arbolito, en un solo color o listo para pintar.",
+    "envio": {
+      "largo": 25,
+      "ancho": 15,
+      "alto": 15,
+      "peso": 400
+    }
+  },
+  {
+    "id": "estrella-arbol",
+    "nombre": "Estrella para la punta del árbol",
+    "categoria": "Navidad",
+    "material": "PLA",
+    "medida": "12 cm aprox.",
+    "precio": 12000,
+    "imagen": "estrella.jpg",
+    "colores": [
+      "Blanco",
+      "Dorado",
+      "Rojo"
+    ],
+    "descripcion": "Estrella facetada que se encastra en la punta del arbolito.",
+    "envio": {
+      "largo": 16,
+      "ancho": 16,
+      "alto": 10,
+      "peso": 120
+    }
+  },
+  {
+    "id": "arbolito-escritorio",
+    "nombre": "Arbolito de escritorio",
+    "categoria": "Navidad",
+    "material": "PLA",
+    "medida": "15 cm de alto aprox.",
+    "precio": 14000,
+    "imagen": "arbolito2.jpg",
+    "colores": [
+      "Verde",
+      "Blanco",
+      "Dorado"
+    ],
+    "descripcion": "Arbolito en espiral con estrella, ideal para el escritorio o la mesa de las Fiestas.",
+    "envio": {
+      "largo": 12,
+      "ancho": 12,
+      "alto": 18,
+      "peso": 150
+    }
+  },
+  {
+    "id": "copos-nieve",
+    "nombre": "Copos de nieve colgantes x6",
+    "categoria": "Navidad",
+    "material": "PLA",
+    "medida": "8 cm aprox. c/u",
+    "precio": 9000,
+    "imagen": "copos.jpg",
+    "colores": [
+      "Blanco",
+      "Plateado",
+      "Dorado"
+    ],
+    "descripcion": "Seis modelos distintos para el árbol, los regalos o la ventana.",
+    "envio": {
+      "largo": 20,
+      "ancho": 15,
+      "alto": 3,
+      "peso": 80
+    }
+  },
+  {
+    "id": "centro-mesa-navideno",
+    "nombre": "Centro de mesa navideño con portavelas",
+    "categoria": "Navidad",
+    "material": "PETG",
+    "medida": "20 cm aprox.",
+    "precio": 22000,
+    "imagen": "centro_mesas_nav.jpg",
+    "colores": [
+      "Beige",
+      "Blanco",
+      "Rojo"
+    ],
+    "descripcion": "Arbolitos y regalitos con lugar para una vela, para la mesa de Nochebuena.",
+    "envio": {
+      "largo": 25,
+      "ancho": 18,
+      "alto": 15,
+      "peso": 300
+    }
+  },
+  {
+    "id": "cartel-feliz-navidad",
+    "nombre": "Cartel \"Feliz Navidad\"",
+    "categoria": "Navidad",
+    "material": "PLA",
+    "medida": "20 cm de ancho aprox.",
+    "precio": 12000,
+    "imagen": "regalo_nav.jpg",
+    "colores": [
+      "Beige",
+      "Rojo",
+      "Dorado"
+    ],
+    "descripcion": "Letras caladas con copo de nieve para decorar la mesa o un estante.",
+    "envio": {
+      "largo": 25,
+      "ancho": 12,
+      "alto": 8,
+      "peso": 120
+    }
+  },
+  {
+    "id": "pack-animales-articulados",
+    "nombre": "Pack de 5 animalitos articulados",
+    "categoria": "Juguetes",
+    "material": "PLA",
+    "medida": "8 a 12 cm c/u",
+    "precio": 25000,
+    "imagen": "",
+    "colores": [
+      "Multicolor"
+    ],
+    "descripcion": "Cinco animales flexibles que se mueven. Ideal para regalar en Navidad, Reyes o cumpleaños.",
+    "envio": {
+      "largo": 20,
+      "ancho": 15,
+      "alto": 8,
+      "peso": 200
+    }
+  },
+  {
+    "id": "fidget-arbolito",
+    "nombre": "Arbolito fidget en espiral",
+    "categoria": "Juguetes",
+    "material": "PLA",
+    "medida": "10 cm aprox.",
+    "precio": 6000,
+    "imagen": "",
+    "colores": [
+      "Verde",
+      "Rojo",
+      "Blanco"
+    ],
+    "descripcion": "Juguete antiestrés con forma de arbolito que gira en espiral.",
+    "envio": {
+      "largo": 12,
+      "ancho": 10,
+      "alto": 10,
+      "peso": 60
+    }
+  },
+  {
+    "id": "porta-mate-termo",
+    "nombre": "Porta mate y termo",
+    "categoria": "Hogar",
+    "material": "PETG",
+    "medida": "Para termo de hasta 9 cm de diámetro",
+    "precio": 12000,
+    "imagen": "",
+    "colores": [
+      "Negro",
+      "Blanco",
+      "Verde"
+    ],
+    "descripcion": "Base para tener el termo y el mate siempre juntos y firmes.",
+    "envio": {
+      "largo": 20,
+      "ancho": 15,
+      "alto": 10,
+      "peso": 200
+    }
+  },
+  {
+    "id": "yerbera-azucarera",
+    "nombre": "Set yerbera y azucarera",
+    "categoria": "Hogar",
+    "material": "PETG",
+    "medida": "12 cm de alto aprox.",
+    "precio": 15000,
+    "imagen": "",
+    "colores": [
+      "Negro",
+      "Blanco",
+      "Terracota"
+    ],
+    "descripcion": "Dos frascos con tapa a juego para el set matero.",
+    "envio": {
+      "largo": 20,
+      "ancho": 12,
+      "alto": 15,
+      "peso": 250
+    }
+  },
+  {
+    "id": "lapicero-docente",
+    "nombre": "Lapicero personalizado para docentes",
+    "categoria": "Regalos",
+    "material": "PLA",
+    "medida": "9 cm de alto aprox.",
+    "precio": 7000,
+    "imagen": "",
+    "colores": [
+      "A elección"
+    ],
+    "descripcion": "Con el nombre de la seño o el profe. El regalo de fin de año para la escuela.",
+    "envio": {
+      "largo": 12,
+      "ancho": 10,
+      "alto": 12,
+      "peso": 100
+    }
   }
 ]
