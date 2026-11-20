@@ -10,7 +10,7 @@ export default function Hero({ sitio }) {
         <p>{hero.texto}</p>
         <div className="hero__botones">
           <a href="#catalogo" className="boton boton--acento">Ver catálogo</a>
-          <a href="#cotizar" className="boton boton--borde">Subir mi archivo</a>
+          <a href="#cotizar" className="boton boton--borde">Pedí algo a medida</a>
         </div>
       </div>
       <div className="hero__visual">

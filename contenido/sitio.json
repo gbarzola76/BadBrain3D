@@ -31,7 +31,7 @@
   },
   "hero": {
     "titulo": "Tu idea, capa por capa, lista para usar.",
-    "texto": "Comprá piezas de nuestro catálogo o mandanos tu archivo STL y lo imprimimos en el material y color que necesites.",
+    "texto": "Comprá piezas de nuestro catálogo o contanos tu idea y la imprimimos en el material y color que necesites.",
     "imagen": ""
   },
   "beneficios": [
@@ -41,7 +41,7 @@
     { "icono": "tarjeta", "titulo": "Medios de pago", "texto": "Transferencia, Mercado Pago o efectivo." }
   ],
   "pasos": [
-    { "titulo": "Mandanos tu archivo", "texto": "STL, OBJ o 3MF. Si no tenés modelo, contanos tu idea con fotos y medidas." },
+    { "titulo": "Contanos tu idea", "texto": "Con fotos, medidas o un dibujo. Si tenés el archivo 3D (STL, OBJ o 3MF), mejor todavía." },
     { "titulo": "Recibí tu presupuesto", "texto": "Te respondemos con precio, material recomendado y plazo de entrega." },
     { "titulo": "Imprimimos", "texto": "Confirmás el pago y arrancamos. Te avisamos cuando esté lista." },
     { "titulo": "Envío o retiro", "texto": "La recibís en tu casa o la pasás a buscar por el taller." }
