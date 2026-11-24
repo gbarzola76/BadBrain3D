@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Icono from './Icono.jsx';
 import Imagen from './Imagen.jsx';
-import { formatoPrecio, linkWhatsApp } from '../util.js';
+import { formatoPrecio, linkWhatsApp, fotosDe } from '../util.js';
 
 // El pedido se confirma por WhatsApp con el detalle armado automáticamente.
 export default function Carrito({ abierto, cerrar, items, sitio, cambiarCantidad, vaciar }) {
@@ -68,7 +68,7 @@ export default function Carrito({ abierto, cerrar, items, sitio, cambiarCantidad
             <ul className="carrito__lista">
               {items.map((i) => (
                 <li key={i.id}>
-                  <div className="carrito__foto"><Imagen src={i.imagen} alt={i.nombre} clave={i.id} /></div>
+                  <div className="carrito__foto"><Imagen src={fotosDe(i)[0]} alt={i.nombre} clave={i.id} /></div>
                   <div className="carrito__datos">
                     <strong>{i.nombre}</strong>
                     <span>{formatoPrecio(i.precio, sitio.moneda)}</span>

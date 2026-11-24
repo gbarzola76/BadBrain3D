@@ -2,6 +2,8 @@
 // La clave de Mercado Pago (MP_ACCESS_TOKEN) se guarda como secreto en Cloudflare,
 // nunca en el código ni en GitHub.
 
+import { atenderAdmin } from './admin.js';
+
 const responder = (datos, status = 200) =>
   new Response(JSON.stringify(datos), { status, headers: { 'content-type': 'application/json; charset=utf-8' } });
 
@@ -17,7 +19,9 @@ export default {
         return responder({ error: 'No se pudo iniciar el pago. Probá de nuevo o escribinos por WhatsApp.' }, 500);
       }
     }
+    if (url.pathname.startsWith('/api/admin/')) return atenderAdmin(request, env, url);
     if (url.pathname.startsWith('/api/')) return responder({ error: 'No encontrado' }, 404);
+    if (url.pathname === '/admin/') return Response.redirect(new URL('/admin', url), 301);
     return env.ASSETS.fetch(request);
   }
 };
@@ -28,6 +32,7 @@ async function leerContenido(env, origen, archivo) {
   return r.json();
 }
 
+const fotosDe = (p) => (Array.isArray(p.imagenes) ? p.imagenes : p.imagen ? [p.imagen] : []).filter(Boolean);
 const esPositivo = (n) => typeof n === 'number' && Number.isFinite(n) && n > 0;
 
 async function crearPago(request, env, url) {
@@ -56,7 +61,7 @@ async function crearPago(request, env, url) {
   for (const linea of lineas) {
     const p = porId.get(String(linea?.id));
     const cantidad = Math.floor(Number(linea?.cantidad));
-    if (!p || !(cantidad >= 1 && cantidad <= 99)) {
+    if (!p || p.activo === false || !(cantidad >= 1 && cantidad <= 99)) {
       return responder({ error: 'Hay un producto que ya no está en el catálogo. Recargá la página.' }, 400);
     }
     if (!esPositivo(p.precio)) {
@@ -77,7 +82,7 @@ async function crearPago(request, env, url) {
       id: p.id,
       title: String(p.nombre).slice(0, 250),
       description: String(p.descripcion || '').slice(0, 250),
-      picture_url: p.imagen ? new URL(`/contenido/imagenes/${p.imagen}`, url.origin).href : undefined,
+      picture_url: fotosDe(p)[0] ? new URL(`/contenido/imagenes/${fotosDe(p)[0]}`, url.origin).href : undefined,
       category_id: 'others',
       quantity: cantidad,
       currency_id: sitio.moneda || 'ARS',

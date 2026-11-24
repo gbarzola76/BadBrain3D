@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
-import Imagen from './Imagen.jsx';
+import FotosProducto from './FotosProducto.jsx';
 import Icono from './Icono.jsx';
-import { formatoPrecio } from '../util.js';
+import { formatoPrecio, fotosDe } from '../util.js';
 
 export default function Catalogo({ productos, moneda, carrito, agregar }) {
   const [categoria, setCategoria] = useState('Todo');
@@ -38,7 +38,7 @@ export default function Catalogo({ productos, moneda, carrito, agregar }) {
         {visibles.map((p) => (
           <article key={p.id} className="producto">
             <div className="producto__foto">
-              <Imagen src={p.imagen} alt={p.nombre} clave={p.id} />
+              <FotosProducto fotos={fotosDe(p)} nombre={p.nombre} clave={p.id} />
               <span className="producto__cat">{p.categoria}</span>
             </div>
             <div className="producto__info">

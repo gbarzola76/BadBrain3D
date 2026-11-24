@@ -10,10 +10,19 @@ export function linkWhatsApp(numero, texto = '') {
 
 export function urlImagen(nombre) {
   if (!nombre) return '';
-  if (/^https?:\/\//.test(nombre) || nombre.startsWith('/')) return nombre;
+  if (/^(https?:|blob:|data:)/.test(nombre) || nombre.startsWith('/')) return nombre;
   // Ruta relativa: funciona con Vite (public/) y en hosting estático (base: './')
   return `./contenido/imagenes/${nombre}`;
 }
+
+// Fotos de un producto: "imagenes" (lista) o, en archivos viejos, "imagen" (una sola).
+export function fotosDe(p) {
+  const lista = Array.isArray(p?.imagenes) ? p.imagenes : p?.imagen ? [p.imagen] : [];
+  return lista.filter((f) => typeof f === 'string' && f.trim() !== '');
+}
+
+// Se muestra en la tienda si no está dado de baja y tiene al menos una foto.
+export const esVisible = (p) => p?.activo !== false && fotosDe(p).length > 0;
 
 // Número estable a partir de un texto (para variar los dibujos de reemplazo)
 export function semilla(texto = '') {

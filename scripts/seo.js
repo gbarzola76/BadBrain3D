@@ -13,13 +13,15 @@ const esc = (t) =>
   String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
 const conFoto = (x) => typeof x.imagen === 'string' && x.imagen.trim() !== '';
+const fotosDe = (p) => (Array.isArray(p.imagenes) ? p.imagenes : p.imagen ? [p.imagen] : []).filter((f) => typeof f === 'string' && f.trim());
+const esVisible = (p) => p.activo !== false && fotosDe(p).length > 0;
 const tienePrecio = (p) => typeof p.precio === 'number' && p.precio > 0;
 const precioTexto = (n, moneda) =>
   new Intl.NumberFormat('es-AR', { style: 'currency', currency: moneda || 'ARS', maximumFractionDigits: 0 }).format(n);
 
 function datos() {
   const sitio = leer('sitio.json');
-  const productos = leer('productos.json').filter(conFoto);
+  const productos = leer('productos.json').filter(esVisible);
   const muestrario = leer('muestrario.json').filter(conFoto);
   const seo = sitio.seo || {};
   const url = String(seo.url || '').replace(/\/+$/, '');
@@ -31,7 +33,7 @@ function datos() {
 function cabecera({ sitio, productos, seo, url, abs, foto }) {
   const titulo = seo.titulo || `${sitio.marca} — ${sitio.eslogan}`;
   const descripcion = seo.descripcion || sitio.hero?.texto || '';
-  const imagen = seo.imagen ? foto(seo.imagen) : productos[0] ? foto(productos[0].imagen) : '';
+  const imagen = seo.imagen ? foto(seo.imagen) : productos[0] ? foto(fotosDe(productos[0])[0]) : '';
   const c = sitio.contacto || {};
 
   const tienda = {
@@ -59,7 +61,7 @@ function cabecera({ sitio, productos, seo, url, abs, foto }) {
         '@type': 'Product',
         name: p.nombre,
         description: p.descripcion,
-        image: foto(p.imagen),
+        image: fotosDe(p).map(foto),
         material: p.material,
         brand: { '@type': 'Brand', name: sitio.marca },
         offers: {
@@ -122,7 +124,7 @@ export default function seo() {
     },
     generateBundle() {
       const { url } = datos();
-      const robots = ['User-agent: *', 'Allow: /', 'Disallow: /api/', url && `Sitemap: ${url}/sitemap.xml`];
+      const robots = ['User-agent: *', 'Allow: /', 'Disallow: /api/', 'Disallow: /admin', url && `Sitemap: ${url}/sitemap.xml`];
       this.emitFile({ type: 'asset', fileName: 'robots.txt', source: robots.filter(Boolean).join('\n') + '\n' });
       if (url) {
         const hoy = new Date().toISOString().slice(0, 10);

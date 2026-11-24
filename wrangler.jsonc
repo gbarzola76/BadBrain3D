@@ -3,6 +3,9 @@
 // - /api/* lo atiende worker/index.js (pagos con Mercado Pago).
 // - La clave MP_ACCESS_TOKEN es un secreto: se carga en Cloudflare → badbrain3d →
 //   Settings → Variables and Secrets (y en .dev.vars para probar en tu compu).
+// - /admin: administración de productos. Secretos: ADMIN_PASSWORD (contraseña) y
+//   GITHUB_TOKEN (permiso para guardar en el repositorio). Los cambios se guardan en GitHub y
+//   Cloudflare vuelve a armar la web sola ("build" de abajo).
 {
   "name": "tienda",
   "main": "worker/index.js",
@@ -11,7 +14,12 @@
     "directory": "./dist",
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
-    "run_worker_first": ["/api/*"]
+    "run_worker_first": ["/api/*", "/admin/"]
+  },
+  "build": { "command": "npm run build" },
+  "vars": {
+    "GITHUB_REPO": "gbarzola76/BadBrain3D",
+    "GITHUB_BRANCH": "main"
   },
   "observability": { "enabled": true }
 }

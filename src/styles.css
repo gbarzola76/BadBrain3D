@@ -275,3 +275,13 @@ p { margin: 0; }
 .aviso-pago--rechazado { background: #FEE2E2; color: #7F1D1D; }
 .aviso-pago__fila { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .aviso-pago .boton-icono { color: inherit; font-size: 1.4rem; line-height: 1; }
+
+/* Varias fotos por producto */
+.fotos { position: relative; width: 100%; height: 100%; }
+.fotos__flecha { position: absolute; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(21,23,26,.55); color: #fff; font-size: 24px; line-height: 1; cursor: pointer; display: grid; place-items: center; opacity: 0; transition: opacity .2s; z-index: 2; }
+.fotos__flecha--izq { left: 8px; } .fotos__flecha--der { right: 8px; }
+.producto:hover .fotos__flecha, .fotos__flecha:focus-visible { opacity: 1; }
+@media (hover: none) { .fotos__flecha { opacity: .85; } }
+.fotos__puntos { position: absolute; left: 0; right: 0; bottom: 10px; display: flex; justify-content: center; gap: 6px; z-index: 2; }
+.fotos__puntos button { width: 8px; height: 8px; padding: 0; border-radius: 50%; border: 0; background: rgba(255,255,255,.6); box-shadow: 0 0 0 1px rgba(0,0,0,.25); cursor: pointer; }
+.fotos__puntos button.activo { background: var(--acento); width: 18px; border-radius: 4px; }

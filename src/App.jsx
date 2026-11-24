@@ -10,6 +10,7 @@ import Cotizar from './components/Cotizar.jsx';
 import Preguntas from './components/Preguntas.jsx';
 import Footer from './components/Footer.jsx';
 import Carrito from './components/Carrito.jsx';
+import { esVisible } from './util.js';
 
 async function obtener(url) {
   const r = await fetch(url);
@@ -49,10 +50,10 @@ export default function App() {
       obtener('./contenido/productos.json'),
       obtener('./contenido/muestrario.json')
     ])
-      // Solo se muestran los productos y trabajos que tienen foto cargada.
+      // Solo se muestran los productos activos y los trabajos que tienen foto cargada.
       .then(([s, p, m]) => {
         const conFoto = (x) => typeof x.imagen === 'string' && x.imagen.trim() !== '';
-        setSitio(s); setProductos(p.filter(conFoto)); setMuestrario(m.filter(conFoto));
+        setSitio(s); setProductos(p.filter(esVisible)); setMuestrario(m.filter(conFoto));
       })
       .catch((e) => setError(e.message));
   }, []);

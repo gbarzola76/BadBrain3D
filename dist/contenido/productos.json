@@ -6,7 +6,11 @@
     "material": "PLA",
     "medida": "65mm de Altura - Tamaño Ajustable",
     "precio": 14000,
-    "imagen": "maceta1.jpg",
+    "imagenes": [
+      "maceta1.jpg",
+      "maceta2.jpg",
+      "maceta3.jpg"
+    ],
     "colores": [
       "Blanco",
       "Negro",
@@ -18,7 +22,8 @@
       "ancho": 10,
       "alto": 10,
       "peso": 150
-    }
+    },
+    "activo": true
   },
   {
     "id": "soporte-auriculares",
@@ -27,7 +32,10 @@
     "material": "PETG",
     "medida": "24 cm",
     "precio": 7500,
-    "imagen": "soporte_auricular1.jpg",
+    "imagenes": [
+      "soporte_auricular1.jpg",
+      "soporte_auricular2.jpg"
+    ],
     "colores": [
       "Negro",
       "Gris"
@@ -38,7 +46,8 @@
       "ancho": 15,
       "alto": 15,
       "peso": 250
-    }
+    },
+    "activo": true
   },
   {
     "id": "organizador-cables",
@@ -47,7 +56,10 @@
     "material": "PLA",
     "medida": "192 x 130 x 75 mm",
     "precio": 40000,
-    "imagen": "organizador_cables1.jpg",
+    "imagenes": [
+      "organizador_cables1.jpg",
+      "organizador_cables2.jpg"
+    ],
     "colores": [
       "Blanco",
       "Negro"
@@ -58,7 +70,8 @@
       "ancho": 10,
       "alto": 5,
       "peso": 80
-    }
+    },
+    "activo": true
   },
   {
     "id": "llavero-personalizado",
@@ -67,7 +80,11 @@
     "material": "PLA",
     "medida": "6 cm",
     "precio": 3500,
-    "imagen": "llavero1.jpg",
+    "imagenes": [
+      "llavero1.jpg",
+      "llavero2.jpg",
+      "llavero3.jpg"
+    ],
     "colores": [
       "A elección"
     ],
@@ -77,7 +94,8 @@
       "ancho": 8,
       "alto": 2,
       "peso": 30
-    }
+    },
+    "activo": true
   },
   {
     "id": "lampara-lithophane",
@@ -86,7 +104,9 @@
     "material": "PLA",
     "medida": "13 cm",
     "precio": 55000,
-    "imagen": "lampara1.jpg",
+    "imagenes": [
+      "lampara1.jpg"
+    ],
     "colores": [
       "Blanco"
     ],
@@ -96,7 +116,8 @@
       "ancho": 15,
       "alto": 15,
       "peso": 400
-    }
+    },
+    "activo": true
   },
   {
     "id": "figura-articulada",
@@ -105,7 +126,9 @@
     "material": "PLA",
     "medida": "30 cm",
     "precio": 15000,
-    "imagen": "dragon_articulado.jpg",
+    "imagenes": [
+      "dragon_articulado.jpg"
+    ],
     "colores": [
       "Multicolor",
       "Verde",
@@ -117,7 +140,8 @@
       "ancho": 12,
       "alto": 8,
       "peso": 150
-    }
+    },
+    "activo": true
   },
   {
     "id": "soporte-celular",
@@ -126,7 +150,9 @@
     "material": "PLA",
     "medida": "Ajustable",
     "precio": 15000,
-    "imagen": "soporte_celular1.jpg",
+    "imagenes": [
+      "soporte_celular1.jpg"
+    ],
     "colores": [
       "Negro",
       "Blanco"
@@ -137,7 +163,8 @@
       "ancho": 12,
       "alto": 12,
       "peso": 250
-    }
+    },
+    "activo": true
   },
   {
     "id": "portavelas",
@@ -146,7 +173,9 @@
     "material": "PLA",
     "medida": "9 cm",
     "precio": 65000,
-    "imagen": "portavelas.png",
+    "imagenes": [
+      "portavelas.png"
+    ],
     "colores": [
       "Blanco",
       "Dorado"
@@ -157,7 +186,8 @@
       "ancho": 12,
       "alto": 12,
       "peso": 120
-    }
+    },
+    "activo": true
   },
   {
     "id": "adorno-navideno-nombre",
@@ -166,7 +196,10 @@
     "material": "PLA",
     "medida": "8,6 x 6,9 cm",
     "precio": 5000,
-    "imagen": "adorno_nav_personal.jpg",
+    "imagenes": [
+      "adorno_nav_personal.jpg",
+      "adorno_nav_personal1.jpg"
+    ],
     "colores": [
       "Rojo",
       "Verde",
@@ -178,7 +211,8 @@
       "ancho": 10,
       "alto": 3,
       "peso": 40
-    }
+    },
+    "activo": true
   },
   {
     "id": "cortantes-navidenos",
@@ -187,7 +221,9 @@
     "material": "PLA",
     "medida": "7 cm aprox. c/u",
     "precio": 18000,
-    "imagen": "cortantes_nav.jpg",
+    "imagenes": [
+      "cortantes_nav.jpg"
+    ],
     "colores": [
       "Rojo",
       "Verde",
@@ -199,7 +235,8 @@
       "ancho": 20,
       "alto": 5,
       "peso": 200
-    }
+    },
+    "activo": true
   },
   {
     "id": "pesebre-navideno",
@@ -208,7 +245,9 @@
     "material": "PLA",
     "medida": "20 cm de ancho aprox.",
     "precio": 35000,
-    "imagen": "pesebre1.jpg",
+    "imagenes": [
+      "pesebre1.jpg"
+    ],
     "colores": [
       "Beige",
       "Blanco",
@@ -220,7 +259,8 @@
       "ancho": 15,
       "alto": 15,
       "peso": 400
-    }
+    },
+    "activo": true
   },
   {
     "id": "estrella-arbol",
@@ -229,7 +269,9 @@
     "material": "PLA",
     "medida": "12 cm aprox.",
     "precio": 12000,
-    "imagen": "estrella.jpg",
+    "imagenes": [
+      "estrella.jpg"
+    ],
     "colores": [
       "Blanco",
       "Dorado",
@@ -241,7 +283,8 @@
       "ancho": 16,
       "alto": 10,
       "peso": 120
-    }
+    },
+    "activo": true
   },
   {
     "id": "arbolito-escritorio",
@@ -250,7 +293,9 @@
     "material": "PLA",
     "medida": "15 cm de alto aprox.",
     "precio": 14000,
-    "imagen": "arbolito2.jpg",
+    "imagenes": [
+      "arbolito2.jpg"
+    ],
     "colores": [
       "Verde",
       "Blanco",
@@ -262,7 +307,8 @@
       "ancho": 12,
       "alto": 18,
       "peso": 150
-    }
+    },
+    "activo": true
   },
   {
     "id": "copos-nieve",
@@ -271,7 +317,9 @@
     "material": "PLA",
     "medida": "8 cm aprox. c/u",
     "precio": 9000,
-    "imagen": "copos.jpg",
+    "imagenes": [
+      "copos.jpg"
+    ],
     "colores": [
       "Blanco",
       "Plateado",
@@ -283,7 +331,8 @@
       "ancho": 15,
       "alto": 3,
       "peso": 80
-    }
+    },
+    "activo": true
   },
   {
     "id": "centro-mesa-navideno",
@@ -292,7 +341,9 @@
     "material": "PETG",
     "medida": "20 cm aprox.",
     "precio": 22000,
-    "imagen": "centro_mesas_nav.jpg",
+    "imagenes": [
+      "centro_mesas_nav.jpg"
+    ],
     "colores": [
       "Beige",
       "Blanco",
@@ -304,7 +355,8 @@
       "ancho": 18,
       "alto": 15,
       "peso": 300
-    }
+    },
+    "activo": true
   },
   {
     "id": "cartel-feliz-navidad",
@@ -313,7 +365,9 @@
     "material": "PLA",
     "medida": "20 cm de ancho aprox.",
     "precio": 12000,
-    "imagen": "regalo_nav.jpg",
+    "imagenes": [
+      "regalo_nav.jpg"
+    ],
     "colores": [
       "Beige",
       "Rojo",
@@ -325,6 +379,7 @@
       "ancho": 12,
       "alto": 8,
       "peso": 120
-    }
+    },
+    "activo": true
   }
 ]

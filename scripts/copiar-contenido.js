@@ -23,9 +23,11 @@ for (const nombre of ['sitio.json', 'productos.json', 'muestrario.json']) {
   }
   const items = Array.isArray(datos) ? datos : [datos.hero || {}];
   for (const item of items) {
-    const img = item.imagen;
-    if (img && !/^https?:\/\//.test(img) && !existsSync(path.join(origen, 'imagenes', img))) {
-      avisos.push(`contenido/${nombre}: no existe la foto "${img}" (${item.nombre || item.titulo || 'inicio'})`);
+    const fotos = Array.isArray(item.imagenes) ? item.imagenes : [item.imagen];
+    for (const img of fotos) {
+      if (img && !/^https?:\/\//.test(img) && !existsSync(path.join(origen, 'imagenes', img))) {
+        avisos.push(`contenido/${nombre}: no existe la foto "${img}" (${item.nombre || item.titulo || 'inicio'})`);
+      }
     }
   }
 }
