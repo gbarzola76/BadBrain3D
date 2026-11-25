@@ -39,6 +39,6 @@ if (errores) {
 for (const a of avisos) console.warn(`⚠ ${a} — se va a ver el dibujo de reemplazo.`);
 
 // Se borra la copia anterior para que no queden fotos que ya no están en contenido/.
-rmSync(destino, { recursive: true, force: true });
+rmSync(destino, { recursive: true, force: true, maxRetries: 5, retryDelay: 300 });
 cpSync(origen, destino, { recursive: true, force: true });
 console.log('✓ contenido/ copiado a public/contenido/');

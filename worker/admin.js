@@ -186,6 +186,7 @@ function limpiarProducto(p, fotosDisponibles) {
     material: texto(p.material, 30, 'material'),
     medida: texto(p.medida, 80, 'medida'),
     precio: numero(p.precio, 'precio', { max: 1e8, entero: true }),
+    descuento: numero(p.descuento, 'descuento', { min: 1, max: 90, entero: true }),
     imagenes,
     colores,
     descripcion: texto(p.descripcion, 1500, 'descripción'),
@@ -199,7 +200,8 @@ function limpiarProducto(p, fotosDisponibles) {
     peso: numero(e.peso, 'peso del envío', { max: 50000 })
   };
   if (Object.values(envio).some((v) => v != null)) limpio.envio = envio;
-  const orden = ['id', 'nombre', 'categoria', 'material', 'medida', 'precio', 'imagenes', 'colores', 'descripcion', 'envio', 'activo'];
+  if (limpio.descuento == null) delete limpio.descuento;
+  const orden = ['id', 'nombre', 'categoria', 'material', 'medida', 'precio', 'descuento', 'imagenes', 'colores', 'descripcion', 'envio', 'activo'];
   return Object.fromEntries(orden.filter((k) => k in limpio).map((k) => [k, limpio[k]]));
 }
 

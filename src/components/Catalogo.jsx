@@ -40,13 +40,17 @@ export default function Catalogo({ productos, moneda, carrito, agregar }) {
             <div className="producto__foto">
               <FotosProducto fotos={fotosDe(p)} nombre={p.nombre} clave={p.id} />
               <span className="producto__cat">{p.categoria}</span>
+              {p.precioLista && <span className="producto__oferta">-{p.descuento}%</span>}
             </div>
             <div className="producto__info">
               <h3>{p.nombre}</h3>
               <p className="producto__desc">{p.descripcion}</p>
               <p className="producto__spec">{p.material} · {p.medida}</p>
               <div className="producto__pie">
-                <span className="precio">{formatoPrecio(p.precio, moneda)}</span>
+                <span className="precio">
+                  {p.precioLista && <s className="precio__antes">{formatoPrecio(p.precioLista, moneda)}</s>}
+                  {formatoPrecio(p.precio, moneda)}
+                </span>
                 <button className="boton boton--acento boton--chico" onClick={() => agregar(p.id)}>
                   {carrito[p.id] ? <><Icono nombre="check" tam={16} /> {carrito[p.id]} en pedido</> : 'Agregar'}
                 </button>

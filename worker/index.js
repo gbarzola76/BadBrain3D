@@ -32,6 +32,11 @@ async function leerContenido(env, origen, archivo) {
   return r.json();
 }
 
+// Misma cuenta que src/util.js: descuento entero 1–90 %, redondeado a $100.
+const precioFinal = (p) =>
+  Number.isInteger(p.descuento) && p.descuento >= 1 && p.descuento <= 90
+    ? Math.round((p.precio * (100 - p.descuento)) / 100 / 100) * 100
+    : p.precio;
 const fotosDe = (p) => (Array.isArray(p.imagenes) ? p.imagenes : p.imagen ? [p.imagen] : []).filter(Boolean);
 const esPositivo = (n) => typeof n === 'number' && Number.isFinite(n) && n > 0;
 
@@ -86,7 +91,7 @@ async function crearPago(request, env, url) {
       category_id: 'others',
       quantity: cantidad,
       currency_id: sitio.moneda || 'ARS',
-      unit_price: p.precio
+      unit_price: precioFinal(p)
     });
   }
 

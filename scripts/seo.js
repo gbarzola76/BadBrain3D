@@ -15,6 +15,10 @@ const esc = (t) =>
 const conFoto = (x) => typeof x.imagen === 'string' && x.imagen.trim() !== '';
 const fotosDe = (p) => (Array.isArray(p.imagenes) ? p.imagenes : p.imagen ? [p.imagen] : []).filter((f) => typeof f === 'string' && f.trim());
 const esVisible = (p) => p.activo !== false && fotosDe(p).length > 0;
+const precioFinal = (p) =>
+  Number.isInteger(p.descuento) && p.descuento >= 1 && p.descuento <= 90
+    ? Math.round((p.precio * (100 - p.descuento)) / 100 / 100) * 100
+    : p.precio;
 const tienePrecio = (p) => typeof p.precio === 'number' && p.precio > 0;
 const precioTexto = (n, moneda) =>
   new Intl.NumberFormat('es-AR', { style: 'currency', currency: moneda || 'ARS', maximumFractionDigits: 0 }).format(n);
@@ -66,7 +70,7 @@ function cabecera({ sitio, productos, seo, url, abs, foto }) {
         brand: { '@type': 'Brand', name: sitio.marca },
         offers: {
           '@type': 'Offer',
-          price: p.precio,
+          price: precioFinal(p),
           priceCurrency: sitio.moneda || 'ARS',
           availability: 'https://schema.org/MadeToOrder',
           ...(url && { url: `${url}/#catalogo` })
@@ -104,7 +108,7 @@ function cuerpo({ sitio, productos, muestrario }) {
       <h1>${esc(sitio.marca)} — ${esc(sitio.hero?.titulo || sitio.eslogan)}</h1>
       <p>${esc(sitio.hero?.texto)}</p>
       <h2>Catálogo</h2>
-      ${lista(productos, (p) => `<strong>${esc(p.nombre)}</strong>${tienePrecio(p) ? ` — ${esc(precioTexto(p.precio, sitio.moneda))}` : ''} (${esc(p.material)}). ${esc(p.descripcion)}`)}
+      ${lista(productos, (p) => `<strong>${esc(p.nombre)}</strong>${tienePrecio(p) ? ` — ${esc(precioTexto(precioFinal(p), sitio.moneda))}` : ''} (${esc(p.material)}). ${esc(p.descripcion)}`)}
       <h2>${esc(m.titulo || 'Muestrario')}</h2>
       ${m.texto ? `<p>${esc(m.texto)}</p>` : ''}
       ${lista(muestrario, (t) => `<strong>${esc(t.titulo)}</strong> (${esc(t.material)}). ${esc(t.descripcion)}`)}

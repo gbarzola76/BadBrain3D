@@ -6,6 +6,7 @@
     "material": "PLA",
     "medida": "65mm de Altura - Tamaño Ajustable",
     "precio": 14000,
+    "descuento": 10,
     "imagenes": [
       "maceta1.jpg",
       "maceta2.jpg",
@@ -150,6 +151,7 @@
     "material": "PLA",
     "medida": "Ajustable",
     "precio": 15000,
+    "descuento": 10,
     "imagenes": [
       "soporte_celular1.jpg"
     ],
@@ -269,6 +271,7 @@
     "material": "PLA",
     "medida": "12 cm aprox.",
     "precio": 12000,
+    "descuento": 15,
     "imagenes": [
       "estrella.jpg"
     ],
@@ -341,6 +344,7 @@
     "material": "PETG",
     "medida": "20 cm aprox.",
     "precio": 22000,
+    "descuento": 10,
     "imagenes": [
       "centro_mesas_nav.jpg"
     ],

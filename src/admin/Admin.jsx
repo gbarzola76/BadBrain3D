@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { formatoPrecio, fotosDe } from '../util.js';
+import { formatoPrecio, fotosDe, tieneOferta, precioFinal } from '../util.js';
 import './admin.css';
 
 // Administración de productos: alta, baja, modificación y fotos.
@@ -29,7 +29,7 @@ const slug = (t) =>
     .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 50);
 
 const vacio = () => ({
-  id: '', nombre: '', categoria: '', material: 'PLA', medida: '', precio: '',
+  id: '', nombre: '', categoria: '', material: 'PLA', medida: '', precio: '', descuento: '',
   imagenes: [], colores: [], descripcion: '', envio: { largo: '', ancho: '', alto: '', peso: '' }, activo: true
 });
 
@@ -125,6 +125,7 @@ export default function Admin() {
     delete b.imagen;
     b.envio = { largo: '', ancho: '', alto: '', peso: '', ...(b.envio || {}) };
     b.precio = b.precio ?? '';
+    b.descuento = b.descuento ?? '';
     setEditando({ borrador: b, original: p || null });
     setAviso(null);
     window.scrollTo(0, 0);
@@ -199,6 +200,7 @@ export default function Admin() {
                       <strong>{p.nombre}</strong>
                       <span>{p.categoria} · {formatoPrecio(p.precio)} · {fotos.length} foto{fotos.length === 1 ? '' : 's'}</span>
                       {p.activo === false && <span className="adm-chip">De baja</span>}
+                      {p.activo !== false && tieneOferta(p) && <span className="adm-chip adm-chip--oferta">Oferta -{p.descuento}% · {formatoPrecio(precioFinal(p))}</span>}
                       {p.activo !== false && fotos.length === 0 && <span className="adm-chip adm-chip--alerta">No se ve: falta foto</span>}
                     </div>
                     <div className="adm-acciones">
@@ -288,7 +290,8 @@ function Editor({ inicial, original, productos, categorias, nuevas, setNuevas, o
       nombre: b.nombre.trim(),
       categoria: b.categoria.trim(),
       colores: coloresTexto.split(',').map((c) => c.trim()).filter(Boolean),
-      precio: b.precio === '' ? null : Number(b.precio)
+      precio: b.precio === '' ? null : Number(b.precio),
+      descuento: b.descuento === '' || Number(b.descuento) === 0 ? null : Number(b.descuento)
     };
     if (!original) {
       let id = slug(final.nombre) || 'producto';
@@ -349,6 +352,11 @@ function Editor({ inicial, original, productos, categorias, nuevas, setNuevas, o
         </label>
         <label>Precio ($)
           <input type="number" inputMode="numeric" min="0" step="1" value={b.precio} onChange={(e) => cambiar('precio', e.target.value)} placeholder="Vacío = a consultar" />
+        </label>
+        <label>Descuento (%) <small>vacío = sin oferta</small>
+          <input type="number" inputMode="numeric" min="0" max="90" step="1" value={b.descuento} onChange={(e) => cambiar('descuento', e.target.value)} placeholder="Ej: 10" />
+          {b.precio !== '' && b.descuento !== '' && Number(b.descuento) >= 1 && Number(b.descuento) <= 90 &&
+            <small>Queda en {formatoPrecio(precioFinal({ precio: Number(b.precio), descuento: Number(b.descuento) }))}</small>}
         </label>
         <label>Material
           <input value={b.material} onChange={(e) => cambiar('material', e.target.value)} list="adm-materiales" maxLength={30} />
